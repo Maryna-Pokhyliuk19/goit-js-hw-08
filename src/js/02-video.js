@@ -12,7 +12,8 @@ player.on('timeupdate', throttle(onSaveTime, 1000));
 player.on('ended', onClearStorage);
 
 function onClearStorage() {
-  localStorage.removeItem(CURRENT_TIME);
+    localStorage.removeItem(CURRENT_TIME);
+    console.log()
 }
 
 function onSaveTime(e) {
