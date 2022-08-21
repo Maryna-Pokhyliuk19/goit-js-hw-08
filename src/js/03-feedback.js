@@ -17,9 +17,11 @@ refs.form.addEventListener('submit', onFormSubmit)
 
 
 function onFormInput(evt) {
-    formData[evt.target.name] = evt.target.value
+    formData[evt.target.name] = evt.target.value;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+    formData[evt.target.name] = null;
 }
+
 
 function onFormSubmit(evt) {
     evt.preventDefault();
@@ -35,6 +37,7 @@ function onFormSubmit(evt) {
     const data = { email, message }
     console.log(data)
     localStorage.removeItem(STORAGE_KEY);
+
     evt.currentTarget.reset();
     }
 
